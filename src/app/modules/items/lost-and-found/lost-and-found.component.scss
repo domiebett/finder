@@ -1,0 +1,47 @@
+.section-wrapper {
+    background-color: white;
+    padding-top: 57px;
+    overflow: hidden;
+}
+
+.item-switcher {
+    margin: 0 auto;
+    width: 100%;
+    height: auto;
+    background-color: white;
+    margin-top: 0;
+
+    .switchers {
+        color: black;
+        text-align: center;
+        padding: 10px;
+        border-bottom: 1px solid #ddd;
+        outline: none;
+        cursor: pointer;
+
+        .switcher-text {
+            line-height: 20px;
+        }
+
+        &.switcher-active {
+            border: 1px solid transparent;
+            border-bottom: 4px solid #28a745;
+        }
+
+        &:hover {
+            background-color: #e1ede1;
+        }
+    }
+}
+
+.sections {
+    display: block;
+    margin: 0 auto;
+    margin-top: 0;
+    width: 95vw;
+    height: calc(100vh - 110px);
+    padding: 20px 10px 10px 10px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    background-color: white;
+}

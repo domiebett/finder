@@ -1,0 +1,16 @@
+<div class="container-fluid full-height section-wrapper">
+  <div class="row justify-content-center item-switcher">
+    <div [routerLink]="['/items/found']" class="col-5 col-sm-5 col-md-3 switchers" [class.switcher-active]="sectionToShow === 'found'">
+      <span class="switcher-text">
+        Looking for item?
+      </span>
+    </div>
+    <div [routerLink]="['/items/lost']" class="col-5 col-sm-5 col-md-3 switchers" [class.switcher-active]="sectionToShow === 'lost'">
+      <span class="switcher-text">Looking for owner?</span>
+    </div>
+  </div>
+  <app-items-table *ngIf="sectionToShow ==='found'" [itemsType]="sectionToShow" class="sections found-section">
+  </app-items-table>
+  <app-items-table *ngIf="sectionToShow ==='lost'" [itemsType]="sectionToShow" class="sections lost-section">
+  </app-items-table>
+</div>

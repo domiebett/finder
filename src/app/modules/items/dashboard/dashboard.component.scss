@@ -1,25 +1,12 @@
-.container-fluid {
-    padding: 0;
-}
-
-.row {
-    margin: 0;
-}
-
-.full-height {
-    height: 100vh;
-}
-
 section {
     &.lost-section {
-        background: url('https://content.artofmanliness.com/uploads/2016/06/shutterstock_375378958_bw.jpg');
+        background: url('./../../../../assets/images/pick-up-wallet.jpg');
         background-position: center bottom;
         background-size: cover;
         background-blend-mode: lighten;
     }
     &.found-section {
-        background: url('http://cdn.playbuzz.com/cdn/7c6837ad-76bb-43ef-8c7e-64bc33f28ecd/d1444157-ad82-47bb-8d68-5a23036cc91d.jpg');
-        // background-position: center bottom;
+        background: url('./../../../../assets/images/lost-wallet.jpg');
         background-size: cover;
         background-blend-mode: darken;
     }
@@ -31,7 +18,7 @@ section {
         left: 0;
         bottom: 0;
         height: 100vh;
-        width: 100vw;
+        width: 100%;
         background-image: linear-gradient(to bottom, transparent, black);
         opacity: .9;
     }
