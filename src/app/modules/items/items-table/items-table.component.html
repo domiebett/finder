@@ -1,0 +1,40 @@
+<h5 class="title">
+  {{ itemsType | titlecase }} Items
+</h5>
+
+<div class="container-fluid row content-wrapper">
+  <div *ngFor="let item of items; let itemIndex = index" class="col-12 col-sm-12 col-md-6 col-lg-4 card-container">
+    <div class="row card-item-content">
+      <div class="col-12 col-sm-6 col-md-6 card-item-main">
+        <div class="carousel-caption">
+          <h6>{{ item.name }}</h6>
+        </div>
+      </div>
+      <div class="col-12 col-sm-6 col-md-6 card-item-description">
+        <p *ngIf="item.toDisplay==='description'"  class="item-description">{{ item.description }}</p>
+        <div *ngIf="item.toDisplay==='contact'">
+          <strong>Name: </strong> {{ item[paramData.reporter].first_name + ' ' + item[paramData.reporter].last_name }} <br>
+          <strong>Phone: </strong> {{ item[paramData.reporter].phone }}.<br>
+          <strong>Email: </strong> {{ item[paramData.reporter].email }}.<br>
+          <strong>Location: </strong> {{ item[paramData.reporter].location }}.<br>
+        </div>
+      </div>
+    </div>
+    <div class="row card-button-holder">
+      <div class="col-8 col-sm-8 col-md-8 card-buttons">
+        <button (click)="changeDisplayType(itemIndex, 'contact')" class="btn btn-primary btn-rounded tool-tip">
+          <i class="fa fa-user" aria-hidden="true"></i>
+          <span class="tooltiptext">Contact Info</span>
+        </button>
+        <button (click)="changeDisplayType(itemIndex, 'description')" class="btn btn-info btn-rounded tool-tip">
+          <i class="fa fa-info" aria-hidden="true"></i>
+          <span class="tooltiptext">Description</span>
+        </button>
+      </div>
+      <div class="col-4 col-sm-4 col-md-4 card-buttons">
+        <button *ngIf="itemsType==='found'"  class="btn btn-success">Claim Item</button>
+        <button *ngIf="itemsType==='lost'" class="btn btn-success">Report Found</button>
+      </div>
+    </div>
+  </div>
+</div>

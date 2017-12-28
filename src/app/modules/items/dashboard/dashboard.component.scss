@@ -1,0 +1,40 @@
+section {
+    &.lost-section {
+        background: url('./../../../../assets/images/pick-up-wallet.jpg');
+        background-position: center bottom;
+        background-size: cover;
+        background-blend-mode: lighten;
+    }
+    &.found-section {
+        background: url('./../../../../assets/images/lost-wallet.jpg');
+        background-size: cover;
+        background-blend-mode: darken;
+    }
+    &:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        left: 0;
+        bottom: 0;
+        height: 100vh;
+        width: 100%;
+        background-image: linear-gradient(to bottom, transparent, black);
+        opacity: .9;
+    }
+    h3 {
+        a {
+            display: block;
+            color: #FFFFFF;
+            transition: transform 0.3s;
+            transition-timing-function: ease-in-out;
+            &:hover {
+                transform: scale(1.2);
+            }
+        }
+    }
+}
+
+.carousel-caption {
+    top: 70%;
+}

@@ -1,1 +1,54 @@
-/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+
+html, body {
+    margin: 0;
+    padding: 0;
+    background-color: black;
+    font-family: 'Montserrat', sans-serif !important;
+}
+
+.container-fluid {
+    padding: 0;
+}
+
+.row {
+    margin: 0;
+}
+
+.full-height {
+    height: 100vh;
+}
+
+.title:after {
+    content: "";
+    position: absolute;
+    background: #28a745;
+    left: 3.5vw;
+    top: 165px;
+    width: 50%;
+    max-width: 70px;
+    height: 6px;
+    border-radius: 3px;
+    z-index: 5;
+}
+
+.tool-tip .tooltiptext {
+    visibility: hidden;
+    width: 120px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    border: 1px solid white;
+    padding: 5px 0;
+
+    /* Position the tooltip */
+    position: absolute;
+    z-index: 10;
+    bottom: 100%;
+    margin-left: -60px;
+}
+
+.tool-tip:hover .tooltiptext {
+    visibility: visible;
+}
