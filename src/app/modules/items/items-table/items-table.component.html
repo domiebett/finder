@@ -21,7 +21,7 @@
       </div>
     </div>
     <div class="row card-button-holder">
-      <div class="col-8 col-sm-8 col-md-8 card-buttons">
+      <div class="col-7 col-sm-6 col-md-8 card-buttons">
         <button (click)="changeDisplayType(itemIndex, 'contact')" class="btn btn-primary btn-rounded tool-tip">
           <i class="fa fa-user" aria-hidden="true"></i>
           <span class="tooltiptext">Contact Info</span>
@@ -31,7 +31,7 @@
           <span class="tooltiptext">Description</span>
         </button>
       </div>
-      <div class="col-4 col-sm-4 col-md-4 card-buttons">
+      <div class="col-5 col-sm-6 col-md-4 card-buttons">
         <button *ngIf="itemsType==='found'"  class="btn btn-success">Claim Item</button>
         <button *ngIf="itemsType==='lost'" class="btn btn-success">Report Found</button>
       </div>

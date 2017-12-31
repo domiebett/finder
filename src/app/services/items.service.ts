@@ -11,7 +11,7 @@ export class ItemsService {
   itemsBaseUrl: string;
 
   constructor(private http: Http) {
-    this.itemsBaseUrl = 'http://localhost:8888/api/v1/items';
+    this.itemsBaseUrl = 'https://finder-server.herokuapp.com/api/v1/items';
   }
 
   /**
