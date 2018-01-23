@@ -9,6 +9,7 @@ import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
 
 import { ItemsService } from './services/items.service';
+import { ModalService } from './services/modal.service';
 
 @NgModule({
   declarations: [
@@ -19,10 +20,11 @@ import { ItemsService } from './services/items.service';
     AppRoutesModule,
     SharedModule,
     ItemsModule,
-    HttpModule
+    HttpModule,
   ],
   providers: [
     ItemsService,
+    ModalService
   ],
   bootstrap: [AppComponent]
 })
