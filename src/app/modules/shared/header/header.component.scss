@@ -1,7 +1,28 @@
-* {
-    color: white;
-}
+
 
 .search-input {
     border-radius: 15px;
+    height: 37.5px;
+}
+
+.submit-button {
+    border-radius: 0 15px 15px 0;
+    height: 37.5px;
+}
+
+.navbar {
+    z-index: 20 !important;
+}
+
+a {
+    cursor: pointer;
+}
+
+.dropdown-menu {
+    a{
+        color: white;
+        &:hover {
+            color: black;
+        }
+    }
 }

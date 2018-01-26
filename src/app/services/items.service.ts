@@ -5,13 +5,15 @@ import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
 
+import { environment } from './../../environments/environment';
+
 @Injectable()
 export class ItemsService {
 
   itemsBaseUrl: string;
 
   constructor(private http: Http) {
-    this.itemsBaseUrl = 'http://localhost:8888/api/v1/items';
+    this.itemsBaseUrl = `${environment.apiBaseUrl}/items`;
   }
 
   /**

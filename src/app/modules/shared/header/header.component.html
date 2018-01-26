@@ -1,9 +1,31 @@
-<nav class="navbar navbar-toggleable-md navbar-dark bg-dark fixed-top">
+<nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+  <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+    aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
   <a [routerLink]="['/dashboard']" class="navbar-brand">
     <img width="30" height="30" src="./../../../../assets/images/search.svg" alt=""> Finder
   </a>
-  <form class="form-inline">
-    <input class="form-control mr-sm-2 search-input" type="search" placeholder="Search" aria-label="Search">
-    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-  </form>
+  <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
+    <form class="form-inline">
+      <div class="input-group">
+        <input type="text" class="form-control search-input" placeholder="Search" aria-label="Search" aria-describedby="basic-addon2">
+        <div class="input-group-append">
+          <button class="btn btn-outline-success submit-button my-sm-0" type="submit">Search</button>
+        </div>
+      </div>
+    </form>
+    <ul class="navbar-nav">
+      <li *ngIf="currentUser" class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          {{ currentUser.user_name }}
+        </a>
+        <div class="dropdown-menu bg-dark" aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item" href="#">Profile</a>
+          <a class="dropdown-item" href="#">Settings</a>
+          <a class="dropdown-item" (click)="logout()">Logout</a>
+        </div>
+      </li>
+    </ul>
+  </div>
 </nav>
