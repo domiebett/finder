@@ -38,33 +38,3 @@ section {
 .carousel-caption {
     top: 70%;
 }
-
-
-.auth {
-    position: fixed;
-    top: 10vh;
-    width: 500px;
-    left: 50%;
-    margin-left: -250px;
-    text-align: center;
-    color: white;
-    cursor: pointer;
-    z-index: 15;
-
-    .login {
-        background-color: rgb(0, 0, 143);
-        padding: 20px;
-        border-radius: 5px 0 0 5px;
-        &:hover {
-            background-color: rgb(0, 0, 216);
-        }
-    }
-    .register {
-        background-color: rgb(1, 82, 1);
-        padding: 20px;
-        border-radius: 0 5px 5px 0;
-        &:hover {
-            background-color: rgb(1, 109, 1);
-        }
-    }
-}

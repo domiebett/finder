@@ -2,7 +2,34 @@
     margin-top: 20px;
 }
 
+.auth-modal-holder {
+    margin: 0 auto;
+    margin-top: 10vw;
+}
+
+.auth-options {
+    a {
+        color: green;
+        cursor: pointer;
+        text-decoration: underline;
+    }
+}
+
 button {
     margin: 10px;
     min-width: 25%
+}
+
+@media screen and (min-width: 701px) {
+
+    .auth-modal-holder {
+        width: 50%;
+    }
+}
+
+@media screen and (max-width: 700px) {
+
+    .auth-modal-holder {
+        width: 90%;
+    }
 }

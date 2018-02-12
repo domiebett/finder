@@ -26,6 +26,11 @@
           <a class="dropdown-item" (click)="logout()">Logout</a>
         </div>
       </li>
+      <div *ngIf="!currentUser">
+        <div (click)="openLoginModal()" class="btn login">
+          Login
+        </div>
+      </div>
     </ul>
   </div>
 </nav>
