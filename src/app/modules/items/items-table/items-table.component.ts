@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { ItemsService } from '../../../services/items.service';
+import { ModalService } from './../../../services/modal.service';
 
 @Component({
   selector: 'app-items-table',
@@ -11,7 +12,10 @@ export class ItemsTableComponent implements OnInit {
   items;
   paramData = { reporter: null };
 
-  constructor(private itemsService: ItemsService) { }
+  constructor(
+    private itemsService: ItemsService,
+    private modalService: ModalService
+  ) { }
 
   ngOnInit() {
     if (this.itemsType === 'found') {
@@ -57,5 +61,12 @@ export class ItemsTableComponent implements OnInit {
       item['toDisplay'] = 'description';
     }
     return items;
+  }
+
+  /**
+   * Opens the add lost item modal
+   */
+  openAddItemModal() {
+    this.modalService.openAddItemModal();
   }
 }

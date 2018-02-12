@@ -1,0 +1,24 @@
+<div class="custom-modal-heading">
+  <h4 class="title">{{ modalTitle | titlecase}}</h4>
+</div>
+<form #form="ngForm" (ngSubmit)="validateForm(form)" validate>
+  <div class="custom-modal-content">
+    <div class="form-group">
+      <label for="email-input">Item Name:</label>
+      <input ngModel id="email-input" class="form-control" type="email" name="email" placeholder="Enter item name" required/>
+    </div>
+    <div class="form-group">
+      <label for="description-input">Item Description</label>
+      <textarea ngModel id="description-input" class="form-control" name="password" placeholder="Enter item description" required></textarea>
+    </div>
+    <div class="form-group">
+
+    </div>
+  </div>
+  <div class="custom-modal-footer">
+    <div class="d-flex form-buttons">
+      <button type="submit" class="ml-auto p-2 btn btn-primary">Submit</button>
+      <button type="button" class="btn btn-danger p-2" (click)="closeModal()">Cancel</button>
+    </div>
+  </div>
+</form>

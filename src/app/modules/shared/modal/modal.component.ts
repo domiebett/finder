@@ -11,6 +11,7 @@ export class ModalComponent implements OnInit {
   @ViewChild('modal') modal;
   modalType = 'none';
   modalWidth = 'slim';
+  modalLength = 'short';
 
   constructor(private modalService: ModalService) { }
 
@@ -31,6 +32,7 @@ export class ModalComponent implements OnInit {
   openLoginModal() {
     this.modalType = 'login';
     this.modalWidth = 'slim';
+    this.modalLength = 'short';
   }
 
   /**
@@ -39,6 +41,16 @@ export class ModalComponent implements OnInit {
   openRegisterModal() {
     this.modalType = 'register';
     this.modalWidth = 'slim';
+    this.modalLength = 'short';
+  }
+
+  /**
+   * Opens modal to add item.
+   */
+  openAddItemModal() {
+    this.modalType = 'addItem';
+    this.modalWidth = 'wide';
+    this.modalLength = 'long';
   }
 
   /**

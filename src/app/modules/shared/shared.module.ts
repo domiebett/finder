@@ -8,6 +8,9 @@ import { AuthComponent } from './auth/auth.component';
 import { ModalComponent } from './modal/modal.component';
 
 import { AuthService } from './../../services/auth.service';
+import { FooterbarComponent } from './footerbar/footerbar.component';
+import { PaginateComponent } from './paginate/paginate.component';
+import { AddItemModalComponent } from './add-item-modal/add-item-modal.component';
 
 @NgModule({
   imports: [
@@ -19,11 +22,15 @@ import { AuthService } from './../../services/auth.service';
   declarations: [
     HeaderComponent,
     ModalComponent,
-    AuthComponent
+    AuthComponent,
+    FooterbarComponent,
+    PaginateComponent,
+    AddItemModalComponent
   ],
   exports: [
     HeaderComponent,
     ModalComponent,
+    FooterbarComponent
   ],
   providers: [
     ModalComponent,

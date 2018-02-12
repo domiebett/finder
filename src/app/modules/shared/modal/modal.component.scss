@@ -21,6 +21,14 @@
         overflow: scroll;
         animation: fadein 1s;
     }
+
+    .custom-modal-long {
+        top: 5vh;
+    }
+
+    .custom-modal-short {
+        top: 15vh;
+    }
 }
 
 @keyframes fadein {

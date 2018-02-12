@@ -32,4 +32,11 @@ export class ModalService {
   openRegisterModal() {
     this.modal.openRegisterModal();
   }
+
+  /**
+   * Opens modal to add lost items.
+   */
+  openAddItemModal() {
+    this.modal.openAddItemModal();
+  }
 }
