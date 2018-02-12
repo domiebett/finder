@@ -26,3 +26,12 @@ a {
         }
     }
 }
+
+.login {
+    background-color: rgb(0, 0, 143);
+    color: #ffffff;
+    margin-left: 5px;
+    &:hover {
+        background-color: rgb(0, 0, 216);
+    }
+}

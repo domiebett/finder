@@ -1,5 +1,6 @@
 import { AuthService } from './../../../services/auth.service';
 import { Component, OnInit, Input, OnDestroy } from '@angular/core';
+import { ModalService } from '../../../services/modal.service';
 
 @Component({
   selector: 'app-header',
@@ -12,7 +13,10 @@ export class HeaderComponent implements OnInit, OnDestroy {
   currentUser;
   subscription;
 
-  constructor(private authService: AuthService) {
+  constructor(
+    private authService: AuthService,
+    private modalService: ModalService
+  ) {
     this.currentUser = this.authService.currentUser;
     this.subscription = authService.currentUserChange
       .subscribe((user) => {
@@ -25,6 +29,13 @@ export class HeaderComponent implements OnInit, OnDestroy {
   ngOnDestroy() {
      this.subscription.unsubscribe();
    }
+
+   /**
+   * Opens the authentication login modal
+   */
+  openLoginModal() {
+    this.modalService.openLoginModal();
+  }
 
    /**
     * Logs a user out.

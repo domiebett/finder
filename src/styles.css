@@ -52,3 +52,7 @@ html, body {
 .tool-tip:hover .tooltiptext {
     visibility: visible;
 }
+
+.display-none {
+    display: hidden;
+}

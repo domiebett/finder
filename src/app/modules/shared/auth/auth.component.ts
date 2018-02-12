@@ -51,6 +51,13 @@ export class AuthComponent implements OnInit {
   }
 
   /**
+   * Toggles between the register and login modal
+   */
+  toggleAuthModal() {
+    this.authType = (this.authType === 'login' ? 'register' : 'login');
+  }
+
+  /**
    * Close the authentication modal
    */
   closeModal() {
