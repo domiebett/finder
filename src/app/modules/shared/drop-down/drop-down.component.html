@@ -1,0 +1,11 @@
+<ul>
+    <li class="dropdown" (mouseleave)="showDropDownContent = false">
+      <button (click)="showDropDownContent = !showDropDownContent" type="button" class="request-option border-square"
+              [disabled]="disabled">
+        {{ selectedValue ? (selectedValue.name | titlecase) : (defaultValue | titlecase) }}
+      </button>
+      <div *ngIf="showDropDownContent" class="request-content common-dropdown-styles">
+        <a *ngFor="let item of list" (click)="setSelectedValue(item)">{{ item.name | titlecase }}</a>
+      </div>
+    </li>
+  </ul>

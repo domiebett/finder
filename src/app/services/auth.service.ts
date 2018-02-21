@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
-import { Http } from '@angular/http';
+import { Http, RequestOptions, Headers } from '@angular/http';
+import { Cookie } from 'ng2-cookies/ng2-cookies';
 import { environment } from './../../environments/environment';
 
 import { Subject } from 'rxjs/Subject';
@@ -68,6 +69,7 @@ export class AuthService {
    */
   logout() {
     localStorage.clear();
+    Cookie.delete('jwt-token');
     this.setCurrentUser();
   }
 

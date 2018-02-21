@@ -11,6 +11,7 @@ export class ModalComponent implements OnInit {
   @ViewChild('modal') modal;
   modalType = 'none';
   modalWidth = 'slim';
+  modalLength = 'short';
 
   constructor(private modalService: ModalService) { }
 
@@ -18,9 +19,13 @@ export class ModalComponent implements OnInit {
     this.modalService.registerModal(this);
   }
 
-  @HostListener('click')
-  onClick() {
-    if (!this.modal.nativeElement.contains(event.target)) {
+  @HostListener('click', ['$event'])
+  onClick(event) {
+    // if (!this.modal.nativeElement.contains(event.target)) {
+    //   this.closeModal();
+    // }
+
+    if (event.path[1].localName === 'app-modal') {
       this.closeModal();
     }
   }
@@ -30,7 +35,6 @@ export class ModalComponent implements OnInit {
    */
   openLoginModal() {
     this.modalType = 'login';
-    this.modalWidth = 'slim';
   }
 
   /**
@@ -38,7 +42,13 @@ export class ModalComponent implements OnInit {
    */
   openRegisterModal() {
     this.modalType = 'register';
-    this.modalWidth = 'slim';
+  }
+
+  /**
+   * Opens modal to add item.
+   */
+  openAddItemModal() {
+    this.modalType = 'addItem';
   }
 
   /**

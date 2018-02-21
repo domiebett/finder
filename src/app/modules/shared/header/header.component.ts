@@ -27,19 +27,19 @@ export class HeaderComponent implements OnInit, OnDestroy {
   ngOnInit() { }
 
   ngOnDestroy() {
-     this.subscription.unsubscribe();
-   }
+    this.subscription.unsubscribe();
+  }
 
-   /**
-   * Opens the authentication login modal
-   */
+  /**
+  * Opens the authentication login modal
+  */
   openLoginModal() {
     this.modalService.openLoginModal();
   }
 
-   /**
-    * Logs a user out.
-    */
+  /**
+   * Logs a user out.
+   */
   logout() {
     this.authService.logout();
   }

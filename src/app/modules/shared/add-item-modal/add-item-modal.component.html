@@ -1,0 +1,60 @@
+<div class="add-item-modal-holder">
+  <div class="custom-modal-heading">
+    <h6 class="title">{{ modalTitle | titlecase}}</h6>
+  </div>
+  <form #form="ngForm" (ngSubmit)="validateForm(form)" validate>
+    <div class="custom-modal-content">
+      <div class="row">
+        <div class="form-group col-md-8 col-lg-8 col-sm-12 col-12">
+          <label for="email-input">Item Name:</label>
+          <input ngModel id="email-input" class="form-control border-square" type="email" name="name" placeholder="Enter item name" required/>
+        </div>
+        <div class="col-md-4 col-lg-4 col-sm-12 col-12">
+          <label>Category:</label>
+          <div>
+            <app-drop-down [defaultValue]="'category'" [list]="categories" (changes)="addDropDownValue($event)"></app-drop-down>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="form-group col-12">
+          <label for="description-input">Item Description:</label>
+          <textarea ngModel id="description-input" class="form-control border-square" name="description" placeholder="Enter item description" required></textarea>
+        </div>
+      </div>
+      <hr>
+      <h6 class="title">Your Details</h6>
+      <section class="row">
+        <div class="col-md-6 col-lg-6 col-sm-6 col-12">
+          <h6><u>What is your complaint?</u></h6>
+          <div class="radio-container">
+            <ul class="list">
+              <li class="list__item">
+                <input type="radio" class="radio-btn" name="reporter" value="owner" id="a-opt" ngModel checked />
+                <label for="a-opt" class="radio-label">I lost the item</label>
+              </li>
+              <li class="list__item">
+                <input type="radio" class="radio-btn" name="reporter" value="finder" id="b-opt" ngModel />
+                <label for="b-opt" class="radio-label">I found the item</label>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-6 col-sm-6 col-12">
+          <h6><u>Your contact details</u></h6>
+          <div class="form-group">
+            <label for="phone-input">Phone Number:</label>
+            <input ngModel class="form-control border-square" name="phone" id="phone-input" required/>
+          </div>
+        </div>
+      </section>
+    </div>
+    <hr>
+    <div class="custom-modal-footer">
+      <div class="d-flex form-buttons">
+        <button type="submit" class="ml-auto p-2 btn btn-primary border-square">Submit</button>
+        <button type="button" class="btn btn-danger border-square p-2" (click)="closeModal()">Cancel</button>
+      </div>
+    </div>
+  </form>
+</div>

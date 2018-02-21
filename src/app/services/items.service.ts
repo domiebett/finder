@@ -1,5 +1,7 @@
+import { HttpService } from './http.service';
+import { AuthService } from './auth.service';
 import { Injectable } from '@angular/core';
-import { Http, Response } from '@angular/http';
+import { Http, Response, RequestOptions } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
 
 import 'rxjs/add/operator/map';
@@ -12,7 +14,7 @@ export class ItemsService {
 
   itemsBaseUrl: string;
 
-  constructor(private http: Http) {
+  constructor(private http: HttpService, private authService: AuthService) {
     this.itemsBaseUrl = `${environment.apiBaseUrl}/items`;
   }
 
@@ -29,6 +31,20 @@ export class ItemsService {
     return this.http.get(completeUrl)
       .map((response: Response) => response.json())
       .catch(error => Observable.throw(error.json()));
+  }
+
+  /**
+   * Sends form details to create object
+   *
+   * @param formValue - values from the add item form
+   *
+   * @return { Observable } -Response from api with item added
+   */
+  addItem(formValue) {
+    const completeUrl = `${this.itemsBaseUrl}`;
+    return this.http.post(completeUrl, formValue)
+      .map((response: Response) => response.json())
+      .catch(error => Observable.throw(error.json));
   }
 
   /**
