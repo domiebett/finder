@@ -1,21 +1,31 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, OnDestroy } from '@angular/core';
 import { ItemsService } from '../../../services/items.service';
 import { ModalService } from './../../../services/modal.service';
+import { AuthService } from './../../../services/auth.service';
 
 @Component({
   selector: 'app-items-table',
   templateUrl: './items-table.component.html',
   styleUrls: ['./items-table.component.scss']
 })
-export class ItemsTableComponent implements OnInit {
+export class ItemsTableComponent implements OnInit, OnDestroy {
   @Input() itemsType;
   items;
+  currentUser;
+  subscription;
   paramData = { reporter: null };
 
   constructor(
     private itemsService: ItemsService,
-    private modalService: ModalService
-  ) { }
+    private modalService: ModalService,
+    private authService: AuthService
+  ) {
+    this.currentUser = this.authService.currentUser;
+    this.subscription = authService.currentUserChange
+      .subscribe((user) => {
+        this.currentUser = user;
+      });
+  }
 
   ngOnInit() {
     if (this.itemsType === 'found') {
@@ -25,6 +35,13 @@ export class ItemsTableComponent implements OnInit {
     }
 
     this.getItems();
+  }
+
+  /**
+   * Unsubscribe from subscription when the component is destroyed
+   */
+  ngOnDestroy() {
+    this.subscription.unsubscribe();
   }
 
   /**

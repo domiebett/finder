@@ -1,13 +1,7 @@
 <div *ngIf="modalType !== 'none'" class="modal-container">
-  <div #modal class="custom-modal"
-    [ngClass]="{
-      'custom-modal-slim': modalWidth === 'slim',
-      'custom-modal-wide': modalWidth === 'wide',
-      'custom-modal-long': modalLength === 'long',
-      'custom-modal-short': modalLength === 'short'
-    }">
+  <div #modal class="custom-modal">
 
-    <app-auth *ngIf="modalType==='login' || modalType==='register'"  [authType]="modalType" (close)="closeModal()"></app-auth>
+    <app-auth *ngIf="modalType==='login' || modalType==='register'" [authType]="modalType" (close)="closeModal()"></app-auth>
 
     <app-add-item-modal *ngIf="modalType==='addItem'" (close)="closeModal()"></app-add-item-modal>
   </div>

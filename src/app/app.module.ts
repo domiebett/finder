@@ -10,6 +10,8 @@ import { AppComponent } from './app.component';
 
 import { ItemsService } from './services/items.service';
 import { ModalService } from './services/modal.service';
+import { HttpService } from './services/http.service';
+import { CategoryService } from './services/category.service';
 
 @NgModule({
   declarations: [
@@ -24,7 +26,9 @@ import { ModalService } from './services/modal.service';
   ],
   providers: [
     ItemsService,
-    ModalService
+    ModalService,
+    HttpService,
+    CategoryService
   ],
   bootstrap: [AppComponent]
 })

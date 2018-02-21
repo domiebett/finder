@@ -6,21 +6,21 @@
         <div class="custom-modal-content">
             <div *ngIf="authType==='register'" class="form-group">
                 <label for="name-input">Name</label>
-                <input ngModel class="form-control" type="text" name="name" placeholder="Enter your name e.g John Doe" required/>
+                <input ngModel class="form-control border-square" type="text" name="name" placeholder="Enter your name e.g John Doe" required/>
             </div>
             <div class="form-group">
                 <label for="email-input">Email</label>
-                <input ngModel class="form-control" type="email" name="email" placeholder="Enter your email e.g johndoe@example.com" required/>
+                <input ngModel class="form-control border-square" type="email" name="email" placeholder="Enter your email e.g johndoe@example.com" required/>
             </div>
             <div class="form-group">
                 <label for="password-input">Password</label>
-                <input ngModel class="form-control" type="password" name="password" placeholder="Enter your password" required/>
+                <input ngModel class="form-control border-square" type="password" name="password" placeholder="Enter your password" required/>
             </div>
         </div>
         <div class="custom-modal-footer">
             <div class="d-flex form-buttons">
-                <button type="submit" class="ml-auto p-2 btn btn-primary">{{ authType | titlecase}}</button>
-                <button type="button" class="btn btn-danger p-2" (click)="closeModal()">Cancel</button>
+                <button type="submit" class="ml-auto p-2 btn btn-primary border-square">{{ authType | titlecase}}</button>
+                <button type="button" class="btn btn-danger p-2 border-square" (click)="closeModal()">Cancel</button>
             </div>
         </div>
     </form>

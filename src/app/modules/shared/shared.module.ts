@@ -11,6 +11,7 @@ import { AuthService } from './../../services/auth.service';
 import { FooterbarComponent } from './footerbar/footerbar.component';
 import { PaginateComponent } from './paginate/paginate.component';
 import { AddItemModalComponent } from './add-item-modal/add-item-modal.component';
+import { DropDownComponent } from './drop-down/drop-down.component';
 
 @NgModule({
   imports: [
@@ -25,12 +26,14 @@ import { AddItemModalComponent } from './add-item-modal/add-item-modal.component
     AuthComponent,
     FooterbarComponent,
     PaginateComponent,
-    AddItemModalComponent
+    AddItemModalComponent,
+    DropDownComponent
   ],
   exports: [
     HeaderComponent,
     ModalComponent,
-    FooterbarComponent
+    FooterbarComponent,
+    DropDownComponent
   ],
   providers: [
     ModalComponent,

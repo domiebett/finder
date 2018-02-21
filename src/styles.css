@@ -5,6 +5,7 @@ html, body {
     padding: 0;
     background-color: black;
     font-family: 'Montserrat', sans-serif !important;
+    font-size: 1em;
 }
 
 .container-fluid {
@@ -59,4 +60,8 @@ html, body {
 
 .display-none {
     display: hidden;
+}
+
+.border-square {
+    border-radius: 0;
 }
