@@ -12,6 +12,7 @@ import { FooterbarComponent } from './footerbar/footerbar.component';
 import { PaginateComponent } from './paginate/paginate.component';
 import { AddItemModalComponent } from './add-item-modal/add-item-modal.component';
 import { DropDownComponent } from './drop-down/drop-down.component';
+import { LoaderComponent } from './loader/loader.component';
 
 @NgModule({
   imports: [
@@ -27,13 +28,15 @@ import { DropDownComponent } from './drop-down/drop-down.component';
     FooterbarComponent,
     PaginateComponent,
     AddItemModalComponent,
-    DropDownComponent
+    DropDownComponent,
+    LoaderComponent
   ],
   exports: [
     HeaderComponent,
     ModalComponent,
     FooterbarComponent,
-    DropDownComponent
+    DropDownComponent,
+    LoaderComponent
   ],
   providers: [
     ModalComponent,

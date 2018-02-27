@@ -1,3 +1,11 @@
-<p>
-  paginate works!
-</p>
+<ul class="pagination modal-3">
+  <li>
+    <a class="prev" [ngClass]="{'disabled': !previousButtonActive }" (click)="previousButtonActive && onClick(activeButton - 1)">&laquo;</a>
+  </li>
+  <li *ngFor="let buttonNumber of activePaginationButtons">
+    <a (click)="onClick(buttonNumber)" [class.active]="activeButton === buttonNumber">{{ buttonNumber }}</a>
+  </li>
+  <li>
+    <a class="next" [ngClass]="{'disabled': !nextButtonActive }" (click)="nextButtonActive && onClick(activeButton + 1)">&raquo;</a>
+  </li>
+</ul>

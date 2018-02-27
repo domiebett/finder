@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { ItemsService } from '../../../services/items.service';
 
 @Component({
   selector: 'app-footerbar',
@@ -7,9 +8,27 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FooterbarComponent implements OnInit {
 
-  constructor() { }
+  subscription;
+  pagination;
+  @Output() paginationPage = new EventEmitter();
+
+  constructor(private itemsService: ItemsService) {
+    this.pagination = this.itemsService.pagination;
+    this.subscription = itemsService.paginationChange
+      .subscribe((pagination) => {
+        this.pagination = pagination;
+      });
+  }
 
   ngOnInit() {
+  }
+
+  /**Emits the pagination page number
+   *
+   * @param pageNumber - pagination page number
+   */
+  emitPaginationPage(pageNumber) {
+    this.paginationPage.emit(pageNumber);
   }
 
 }
