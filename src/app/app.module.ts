@@ -1,3 +1,4 @@
+import { AlertService } from './services/alert.service';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { SharedModule } from './modules/shared/shared.module';
@@ -12,6 +13,7 @@ import { ItemsService } from './services/items.service';
 import { ModalService } from './services/modal.service';
 import { HttpService } from './services/http.service';
 import { CategoryService } from './services/category.service';
+import { ErrorService } from './services/error.service';
 
 @NgModule({
   declarations: [
@@ -28,7 +30,9 @@ import { CategoryService } from './services/category.service';
     ItemsService,
     ModalService,
     HttpService,
-    CategoryService
+    CategoryService,
+    ErrorService,
+    AlertService
   ],
   bootstrap: [AppComponent]
 })

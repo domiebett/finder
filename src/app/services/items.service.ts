@@ -1,3 +1,4 @@
+import { ErrorService } from './error.service';
 import { HttpService } from './http.service';
 import { AuthService } from './auth.service';
 import { Injectable } from '@angular/core';
@@ -17,7 +18,10 @@ export class ItemsService {
   pagination;
   paginationChange: Subject<any> = new Subject<any>();
 
-  constructor(private http: HttpService, private authService: AuthService) {
+  constructor(
+    private http: HttpService,
+    private authService: AuthService,
+    private errorService: ErrorService) {
     this.itemsBaseUrl = `${environment.apiBaseUrl}/items`;
   }
 
@@ -52,7 +56,10 @@ export class ItemsService {
     const completeUrl = `${this.itemsBaseUrl}`;
     return this.http.post(completeUrl, formValue)
       .map((response: Response) => response.json())
-      .catch(error => Observable.throw(error.json));
+      .catch((err) => {
+        this.errorService.handleErrors(err);
+        return Observable.throw(err);
+    });
   }
 
   /**

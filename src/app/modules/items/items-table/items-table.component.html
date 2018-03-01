@@ -8,7 +8,7 @@
     <button *ngIf="currentUser" (click)="openAddItemModal()" class="btn btn-primary">
       Add Lost Item
     </button>
-    <button *ngIf="!currentUser" class="btn btn-secondary" disabled>
+    <button (click)="popUpLoginRequiredAlert()" *ngIf="!currentUser" class="btn btn-secondary">
       Login to add lost item
     </button>
   </div>
