@@ -1,5 +1,5 @@
 <section class="row footer-bar">
-  <div class="">
-    <app-paginate></app-paginate>
+  <div class="pagination">
+    <app-paginate [pagination]="pagination" (paginationPage)="emitPaginationPage($event)"></app-paginate>
   </div>
 </section>

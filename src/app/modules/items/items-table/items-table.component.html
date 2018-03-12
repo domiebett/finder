@@ -5,7 +5,7 @@
     </h5>
   </div>
   <div class="p-2">
-    <button *ngIf="currentUser"  (click)="openAddItemModal()" class="btn btn-primary">
+    <button *ngIf="currentUser" (click)="openAddItemModal()" class="btn btn-primary">
       Add Lost Item
     </button>
     <button *ngIf="!currentUser" class="btn btn-secondary" disabled>
@@ -14,7 +14,7 @@
   </div>
 </div>
 
-<div class="container-fluid row content-wrapper">
+<div *ngIf="!loading" class="container-fluid row content-wrapper">
   <div *ngFor="let item of items; let itemIndex = index" class="col-12 col-sm-12 col-md-6 col-lg-4 card-container">
     <div class="row card-item-content">
       <div class="col-12 col-sm-6 col-md-6 card-item-main">
@@ -56,4 +56,8 @@
       </div>
     </div>
   </div>
+</div>
+
+<div *ngIf="loading" class="loader">
+  <app-loader></app-loader>
 </div>

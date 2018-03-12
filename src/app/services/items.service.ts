@@ -8,11 +8,14 @@ import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
 
 import { environment } from './../../environments/environment';
+import { Subject } from 'rxjs/Subject';
 
 @Injectable()
 export class ItemsService {
 
   itemsBaseUrl: string;
+  pagination;
+  paginationChange: Subject<any> = new Subject<any>();
 
   constructor(private http: HttpService, private authService: AuthService) {
     this.itemsBaseUrl = `${environment.apiBaseUrl}/items`;
@@ -29,7 +32,12 @@ export class ItemsService {
   getItems(params) {
     const completeUrl = `${this.itemsBaseUrl}?${this.paramBuilder(params)}`;
     return this.http.get(completeUrl)
-      .map((response: Response) => response.json())
+      .map((response: Response) => {
+        const itemResponse = response.json();
+        this.pagination = itemResponse.pagination;
+        this.paginationChange.next(this.pagination);
+        return response.json();
+      })
       .catch(error => Observable.throw(error.json()));
   }
 

@@ -13,6 +13,7 @@ export class ItemsTableComponent implements OnInit, OnDestroy {
   items;
   currentUser;
   subscription;
+  loading = true;
   paramData = { reporter: null };
 
   constructor(
@@ -47,11 +48,16 @@ export class ItemsTableComponent implements OnInit, OnDestroy {
   /**
    * Send http request to get items with reporter filter
    */
-  getItems() {
+  getItems(pageNumber?: number) {
+    this.loading = true;
+    if (pageNumber) {
+      this.paramData['page'] = pageNumber;
+    }
     this.itemsService.getItems(this.paramData)
       .toPromise()
       .then((response) => {
         this.items = this.formatItem(response.items);
+        this.loading = false;
       });
   }
 

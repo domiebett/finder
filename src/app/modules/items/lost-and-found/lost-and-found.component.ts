@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { ItemsTableComponent } from '../items-table/items-table.component';
 
 @Component({
   selector: 'app-lost-and-found',
@@ -8,6 +9,7 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class LostAndFoundComponent implements OnInit {
 
+  @ViewChild(ItemsTableComponent) itemsTableComponent: ItemsTableComponent;
   sectionToShow = 'found';
 
   constructor(private activatedRoute: ActivatedRoute) {
@@ -24,4 +26,12 @@ export class LostAndFoundComponent implements OnInit {
     this.sectionToShow = section;
   }
 
+  /**
+   * Fetches pagination page number
+   *
+   * @param pageNumber - the page number to be fetched
+   */
+  fetchPaginatedPage(pageNumber) {
+    this.itemsTableComponent.getItems(pageNumber);
+  }
 }
