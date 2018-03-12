@@ -46,6 +46,7 @@ import { AlertComponent } from './alert/alert.component';
   ],
   providers: [
     ModalComponent,
+    AlertComponent,
     AuthService
   ]
 })

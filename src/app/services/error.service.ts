@@ -1,9 +1,10 @@
+import { AlertService } from './alert.service';
 import { Injectable } from '@angular/core';
 
 @Injectable()
 export class ErrorService {
 
-  constructor() { }
+  constructor(private alertService: AlertService) { }
 
   /**
    * Handles http errors
@@ -11,7 +12,8 @@ export class ErrorService {
    * @param error - http error
    */
   handleErrors(error) {
-    console.log(error.status);
+    console.log(error.status, 'error service');
+    this.alertService.popUpAlert(error.json().message, 'warning');
   }
 
 }

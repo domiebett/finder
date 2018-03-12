@@ -1,5 +1,9 @@
 import { AlertComponent } from './../modules/shared/alert/alert.component';
 import { Injectable } from '@angular/core';
+import { AlertComponent } from './../modules/shared/alert/alert.component';
+
+import 'rxjs/add/observable/interval';
+import 'rxjs/add/operator/takeWhile';
 
 @Injectable()
 export class AlertService {

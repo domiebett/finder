@@ -13,7 +13,7 @@ export class ModalService {
   /**
    * Registers the modal component to the modal service
    *
-   * @param authComponent - the modal component
+   * @param modalComponent - the modal component
    */
   registerModal(modalComponent: ModalComponent) {
     this.modal = modalComponent;

@@ -56,9 +56,9 @@ export class ItemsService {
     const completeUrl = `${this.itemsBaseUrl}`;
     return this.http.post(completeUrl, formValue)
       .map((response: Response) => response.json())
-      .catch((err) => {
-        this.errorService.handleErrors(err);
-        return Observable.throw(err);
+      .catch((error) => {
+        this.errorService.handleErrors(error);
+        return Observable.throw(error);
     });
   }
 
