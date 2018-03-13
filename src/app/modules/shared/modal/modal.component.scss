@@ -5,7 +5,7 @@
     top: 0;
     left: 0;
     background-color: rgba(255, 255, 255, 0.7);;
-    z-index: 20;
+    z-index: 190;
     animation: slideInFromRight 0.5s;
 
     .custom-modal {
@@ -17,7 +17,7 @@
         top: 0;
         right: 0;
         padding: 20px;
-        z-index: 25;
+        z-index: 200;
         overflow: scroll;
         animation: fadein 1s;
     }
@@ -28,6 +28,11 @@
 
     .custom-modal-short {
         top: 15vh;
+    }
+
+    .close-button {
+        position: absolute;
+        transform: rotate(45deg);
     }
 }
 
@@ -57,10 +62,21 @@
     .custom-modal {
         width: 100vw;
     }
+
+    .close-button {
+        top: 3vh;
+        right: 5vw;
+        z-index: 300;
+    }
 }
 
 @media only screen and (min-width: 700px) {
     .custom-modal {
         width: 80vw;
+    }
+
+    .close-button {
+        top: 10vh;
+        left: 10vw;
     }
 }

@@ -1,5 +1,4 @@
 .btn {
-    position: absolute;
     height: 60px;
     width: 60px;
     font-size: 40px;
@@ -7,9 +6,6 @@
     border-radius: 50%;
     background-color: green;
     color: white;
-    bottom: 60px;
-    right: 40px;
-    z-index: 110;
     transition: 0.3s ease-in-out;
     &:hover {
         transform: scale(1.1);
