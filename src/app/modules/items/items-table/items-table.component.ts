@@ -55,6 +55,7 @@ export class ItemsTableComponent implements OnInit, OnDestroy {
     if (pageNumber) {
       this.paramData['page'] = pageNumber;
     }
+    this.paramData['limit'] = 40;
     this.itemsService.getItems(this.paramData)
       .toPromise()
       .then((response) => {

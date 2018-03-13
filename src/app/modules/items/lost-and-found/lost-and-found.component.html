@@ -1,6 +1,5 @@
 <div class="container-fluid full-height section-wrapper">
-  <div class="d-flex justify-content-end function-bar">
-    <div class="row mr-auto p-2 item-switcher">
+    <div class="row justify-content-center item-switcher">
       <div [routerLink]="['/items/found']" class="col-5 col-sm-5 col-md-3 switchers" [class.switcher-active]="sectionToShow === 'found'">
         <span class="switcher-text">
           Found items
@@ -10,15 +9,6 @@
         <span class="switcher-text">Lost items</span>
       </div>
     </div>
-    <div class="add-item-button-holder p-2">
-      <button *ngIf="currentUser" (click)="openAddItemModal()" class="btn btn-primary">
-        Add Lost Item
-      </button>
-      <button (click)="popUpLoginRequiredAlert()" *ngIf="!currentUser" class="btn btn-secondary" disabled>
-        Login to add lost item
-      </button>
-    </div>
-  </div>
   <app-items-table *ngIf="sectionToShow ==='found'" [itemsType]="sectionToShow" class="sections found-section">
   </app-items-table>
   <app-items-table *ngIf="sectionToShow ==='lost'" [itemsType]="sectionToShow" class="sections lost-section">

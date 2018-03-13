@@ -4,12 +4,6 @@
     overflow: hidden;
 }
 
-.function-bar {
-    margin: 0;
-    padding: 0;
-    padding-left: 10vw;
-}
-
 .item-switcher {
     margin: 0 auto !important;
     padding: 0 !important;
@@ -41,11 +35,10 @@
     display: block;
     margin: 0 auto;
     margin-top: 0;
-    width: 95vw;
+    width: 100vw;
     height: calc(100vh - 160px);
     padding: 20px 10px 10px 10px;
     border: 1px solid #ddd;
-    border-radius: 10px;
     background-color: white;
 }
 
