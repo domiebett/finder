@@ -42,7 +42,11 @@ export class ItemsService {
         this.paginationChange.next(this.pagination);
         return response.json();
       })
-      .catch(error => Observable.throw(error.json()));
+      .catch((error) => {
+        console.log(error);
+        this.errorService.handleErrors(error);
+        return Observable.throw(error);
+    });
   }
 
   /**

@@ -31,15 +31,14 @@ export class AlertComponent implements OnInit {
    * @param alertType - The type of alert, i.e. success or warning
    */
   openAlertPopup(alertMessage, alertType) {
-    console.log('Other component');
     this.alerts.push(alertMessage);
     this.alertType = alertType;
     this.timeout(this.closeAlertPopup, 5000);
   }
 
   closeAlertPopup() {
-    this.alertType = '';
-    // this.alerts = [];
+    this.alerts.pop();
+    return this.alerts.length <= 0;
   }
 
   timeout(functionName, time) {
@@ -47,8 +46,7 @@ export class AlertComponent implements OnInit {
     Observable.interval(time)
     .takeWhile(() => !stopCondition)
     .subscribe(i => {
-      stopCondition = true;
-      functionName();
+      stopCondition = functionName();
     });
   }
 }

@@ -95,6 +95,10 @@ export class ItemsTableComponent implements OnInit, OnDestroy {
     this.modalService.openAddItemModal();
   }
 
+  /**
+   * Pop up alert regarding the necessity of logging in
+   * before adding an item
+  */
   popUpLoginRequiredAlert() {
     console.log('Component');
     this.alertService.popUpAlert(
