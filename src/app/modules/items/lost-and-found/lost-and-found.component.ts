@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ItemsTableComponent } from '../items-table/items-table.component';
 
 @Component({
@@ -12,9 +12,13 @@ export class LostAndFoundComponent implements OnInit {
   @ViewChild(ItemsTableComponent) itemsTableComponent: ItemsTableComponent;
   sectionToShow = 'found';
 
-  constructor(private activatedRoute: ActivatedRoute) {
+  constructor(
+    private activatedRoute: ActivatedRoute,
+    private router: Router
+  ) {
     this.activatedRoute.params.subscribe(params => {
       this.sectionToShow = params['section'];
+      this.checkSectionValidity(this.sectionToShow);
     });
   }
 
@@ -24,6 +28,16 @@ export class LostAndFoundComponent implements OnInit {
 
   switchSection(section) {
     this.sectionToShow = section;
+    this.checkSectionValidity(this.sectionToShow);
+  }
+
+  /**
+   * Check if the section being navigated to is a valid section
+   */
+  checkSectionValidity(section) {
+    if (section !== 'lost' && section !== 'found') {
+      this.router.navigate(['/error/404']);
+    }
   }
 
   /**

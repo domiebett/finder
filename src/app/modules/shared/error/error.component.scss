@@ -11,10 +11,18 @@
     left: 0;
     height: 100vh;
     width: 100vw;
-    background: url('https://im-01.gifer.com/1kuQ.gif') no-repeat;
-    background-size: cover;
     z-index: 101;
     overflow: hidden;
+}
+
+.error-404-background {
+    background: url('https://images.unsplash.com/photo-1473254773321-be90a4a8e70c?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=e19cf8f8def798842f9aaa270c8f3829&auto=format&fit=crop&w=1952&q=80') no-repeat;
+    background-size: cover;
+}
+
+.error-500-background {
+    background: url('https://images.unsplash.com/photo-1461724947009-3c626ff3d2bc?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=a6285973472b2de5a467fd4dc95b9753&auto=format&fit=crop&w=1950&q=80') no-repeat;
+    background-size: cover;
 }
 
 .error-container {
@@ -22,19 +30,16 @@
     background-color: white;
     height: 98vh;
     width: 98vw;
-    padding-top: 10vw;
-    // border: 1px solid gray;
-    // background: #c2c2c2;
     background: transparent;
     box-shadow: 0px 0px 50px black;
     top: 1vh;
     left: 1vw;
+    padding-top: 20vh;
     align-content: center;
     z-index: 102;
 }
 
 .error-number, .error-message {
-    transform: rotate(-20deg);
     color: white;
 }
 
@@ -45,7 +50,6 @@
     z-index: 105;
     a {
         color: white;
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         font-size: 20px;
         &:hover {
             color: green;
@@ -58,12 +62,14 @@
 
 .confused-bear {
     position: absolute;
-    bottom: 5px;
+    bottom: 0;
     right: 20px;
+    transition: 2s;
+    animation: walk_left_right 20s infinite;
 }
 
 .error-number {
-    font-size: 15em;
+    font-size: 10em;
     font-weight: 100;
     text-align: center;
 }
@@ -71,6 +77,18 @@
 .error-message {
     font-size: 2em;
     text-align: center;
+}
+
+@keyframes walk_left_right {
+    0% {
+        right: 20px;
+    }
+    50% {
+        right: calc(100vw - 148px);
+    }
+    100% {
+        right: 20px;
+    }
 }
 
 
