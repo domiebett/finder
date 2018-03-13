@@ -14,7 +14,6 @@ export class AddButtonComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    console.log(this.disabled);
   }
 
   /**
