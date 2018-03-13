@@ -10,11 +10,7 @@ import { ActivatedRoute, ParamMap, Params, Router } from '@angular/router';
 export class ErrorComponent implements OnInit {
   statusCode = 0;
   errorMessage = '';
-  backgroundImageUrl = '';
-
-  // errors = {
-  //   not_found: [404, 'This page is unavailable']
-  // };
+  backgroundImageClass = 'error-background';
 
   errors = {
     404: 'The page you were looking for was not found.',
@@ -32,6 +28,11 @@ export class ErrorComponent implements OnInit {
     });
   }
 
+  /**
+   * Sets the status code, error message and background image
+   *
+   * @param errorCode - The html error code
+   */
   setDisplayedErrors(errorCode) {
     this.statusCode = errorCode;
     if ((errorCode in this.errors)) {
@@ -40,6 +41,9 @@ export class ErrorComponent implements OnInit {
       this.errorMessage =
         'An unexpected error occured. We apologise for the inconvinience';
     }
-    this.backgroundImageUrl = `error-${this.statusCode}-background`;
+
+    if (errorCode === 404 || errorCode === 500) {
+      this.backgroundImageClass = `error-${errorCode}-background`;
+    }
   }
 }

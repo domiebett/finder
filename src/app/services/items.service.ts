@@ -43,7 +43,6 @@ export class ItemsService {
         return response.json();
       })
       .catch((error) => {
-        console.log(error);
         this.errorService.handleErrors(error);
         return Observable.throw(error);
     });

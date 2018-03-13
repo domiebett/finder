@@ -87,22 +87,4 @@ export class ItemsTableComponent implements OnInit, OnDestroy {
     }
     return items;
   }
-
-  /**
-   * Opens the add lost item modal
-   */
-  openAddItemModal() {
-    this.modalService.openAddItemModal();
-  }
-
-  /**
-   * Pop up alert regarding the necessity of logging in
-   * before adding an item
-  */
-  popUpLoginRequiredAlert() {
-    console.log('Component');
-    this.alertService.popUpAlert(
-      'You must be logged in to add an item',
-      'warning');
-  }
 }
