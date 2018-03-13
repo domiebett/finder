@@ -1,0 +1,11 @@
+<div class="background-container" [ngClass]="backgroundImageClass">
+  <div class="error-container">
+    <div class="error-number">{{ statusCode }}</div>
+    <div class="error-message">{{ errorMessage }}<br>
+      <a [routerLink]="['/dashboard']">&#8617; Click here </a>to back to dashboard
+    </div>
+  </div>
+  <div class="confused-bear">
+      <img src="https://im-01.gifer.com/5RTD.gif" alt="HTML5 Icon" style="width:128px;height:128px;">
+  </div>
+</div>

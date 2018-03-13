@@ -1,3 +1,4 @@
+import { ErrorComponent } from './modules/shared/error/error.component';
 import { SharedModule } from './modules/shared/shared.module';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
@@ -10,7 +11,11 @@ const appRoutes: Routes = [
 
     { path: 'dashboard', component: DashboardComponent },
 
-    { path: 'items/:section', component: LostAndFoundComponent}
+    { path: 'items/:section', component: LostAndFoundComponent},
+
+    { path: 'error/:errorCode', component: ErrorComponent },
+
+    { path: '**', redirectTo: 'error/404', pathMatch: 'full'}
 ];
 
 @NgModule({

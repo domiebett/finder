@@ -1,3 +1,4 @@
+import { ErrorComponent } from './error/error.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
@@ -13,6 +14,7 @@ import { PaginateComponent } from './paginate/paginate.component';
 import { AddItemModalComponent } from './add-item-modal/add-item-modal.component';
 import { DropDownComponent } from './drop-down/drop-down.component';
 import { LoaderComponent } from './loader/loader.component';
+import { AlertComponent } from './alert/alert.component';
 
 @NgModule({
   imports: [
@@ -29,17 +31,22 @@ import { LoaderComponent } from './loader/loader.component';
     PaginateComponent,
     AddItemModalComponent,
     DropDownComponent,
-    LoaderComponent
+    LoaderComponent,
+    ErrorComponent,
+    AlertComponent
   ],
   exports: [
     HeaderComponent,
     ModalComponent,
     FooterbarComponent,
     DropDownComponent,
-    LoaderComponent
+    LoaderComponent,
+    ErrorComponent,
+    AlertComponent
   ],
   providers: [
     ModalComponent,
+    AlertComponent,
     AuthService
   ]
 })

@@ -1,0 +1,39 @@
+.alert-container {
+    position: absolute;
+    width: 90vw;
+    left: 5vw;
+    top: 7vh;
+    z-index: 109;
+    animation: fadein 1s;
+}
+
+.alert {
+    list-style-type: none;
+    display: block;
+    margin-bottom: 10px;
+    padding: 5px;
+    border-radius: 10px;
+    z-index: 110;
+    text-align: center;
+    &.warning {
+        background-color: #fa6666;
+        border: 1px solid red;
+    }
+    &.success {
+        background-color: #7bff98;
+        border: 1px solid green;
+    }
+}
+
+@keyframes fadein {
+
+    0% {
+        opacity: 0;
+    }
+    40% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}

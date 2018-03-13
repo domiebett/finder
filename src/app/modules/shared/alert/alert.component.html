@@ -1,0 +1,4 @@
+<div *ngIf="alerts" class="alert-container">
+  <li *ngFor="let alert of alerts" class="alert" [ngClass]="alertType">{{ alert }}</li>
+  <!--<li class="alert" [ngClass]="alertType">{{alert}}</li>-->
+</div>

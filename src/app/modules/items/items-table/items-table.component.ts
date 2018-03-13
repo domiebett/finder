@@ -1,3 +1,4 @@
+import { AlertService } from './../../../services/alert.service';
 import { Component, OnInit, Input, OnDestroy } from '@angular/core';
 import { ItemsService } from '../../../services/items.service';
 import { ModalService } from './../../../services/modal.service';
@@ -19,7 +20,8 @@ export class ItemsTableComponent implements OnInit, OnDestroy {
   constructor(
     private itemsService: ItemsService,
     private modalService: ModalService,
-    private authService: AuthService
+    private authService: AuthService,
+    private alertService: AlertService
   ) {
     this.currentUser = this.authService.currentUser;
     this.subscription = authService.currentUserChange
@@ -84,12 +86,5 @@ export class ItemsTableComponent implements OnInit, OnDestroy {
       item['toDisplay'] = 'description';
     }
     return items;
-  }
-
-  /**
-   * Opens the add lost item modal
-   */
-  openAddItemModal() {
-    this.modalService.openAddItemModal();
   }
 }
