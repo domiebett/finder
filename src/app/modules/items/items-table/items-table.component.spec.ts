@@ -1,15 +1,14 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ItemsTableComponent } from './items-table.component';
+import { testingModule } from './../../../mocks/test.module';
 
 describe('ItemsTableComponent', () => {
   let component: ItemsTableComponent;
   let fixture: ComponentFixture<ItemsTableComponent>;
 
   beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      declarations: [ ItemsTableComponent ]
-    })
+    TestBed.configureTestingModule(testingModule)
     .compileComponents();
   }));
 

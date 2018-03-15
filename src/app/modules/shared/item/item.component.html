@@ -2,7 +2,7 @@
   <div class="wrapper">
     <div class="header">
       <div class="date">
-        {{ item.dateCreated | date:'mediumDate' }}
+        {{ item?.dateCreated | date:'mediumDate' }}
       </div>
       <ul class="menu-content">
         <li>
@@ -19,11 +19,11 @@
     </div>
     <div class="data">
       <div class="content">
-        <span class="author">{{ reporter.first_name}} {{ reporter.last_name }}</span>
+        <span class="author">{{ reporter?.first_name}} {{ reporter?.last_name }}</span>
         <h1 class="card-title">
-          <a>{{ item.name }}</a>
+          <a>{{ item?.name }}</a>
         </h1>
-        <button class="btn btn-success claim-button text">{{ item.owner ? 'Report Found' : 'Claim Item' }}</button>
+        <button class="btn btn-success claim-button text">{{ item?.owner ? 'Report Found' : 'Claim Item' }}</button>
       </div>
     </div>
   </div>

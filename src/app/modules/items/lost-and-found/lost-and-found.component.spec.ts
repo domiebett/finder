@@ -1,15 +1,14 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { LostAndFoundComponent } from './lost-and-found.component';
+import { testingModule } from './../../../mocks/test.module';
 
 describe('LostAndFoundComponent', () => {
   let component: LostAndFoundComponent;
   let fixture: ComponentFixture<LostAndFoundComponent>;
 
   beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      declarations: [ LostAndFoundComponent ]
-    })
+    TestBed.configureTestingModule(testingModule)
     .compileComponents();
   }));
 

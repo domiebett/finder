@@ -1,15 +1,14 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { AuthComponent } from './auth.component';
+import { testingModule } from './../../../mocks/test.module';
 
 describe('AuthComponent', () => {
   let component: AuthComponent;
   let fixture: ComponentFixture<AuthComponent>;
 
   beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      declarations: [ AuthComponent ]
-    })
+    TestBed.configureTestingModule(testingModule)
     .compileComponents();
   }));
 

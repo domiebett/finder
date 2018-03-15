@@ -1,15 +1,14 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ModalComponent } from './modal.component';
+import { testingModule } from './../../../mocks/test.module';
 
 describe('ModalComponent', () => {
   let component: ModalComponent;
   let fixture: ComponentFixture<ModalComponent>;
 
   beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      declarations: [ ModalComponent ]
-    })
+    TestBed.configureTestingModule(testingModule)
     .compileComponents();
   }));
 
