@@ -1,8 +1,8 @@
-<div class="item-card">
+<div class="item-card" [ngClass]="itemLayout" >
   <div class="wrapper">
     <div class="header">
       <div class="date">
-        {{ item.dateUpdated | date:'mediumDate' }}
+        {{ item.dateCreated | date:'mediumDate' }}
       </div>
       <ul class="menu-content">
         <li>

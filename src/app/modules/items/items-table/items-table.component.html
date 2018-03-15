@@ -1,7 +1,7 @@
 <div *ngIf="!loading" class="container-fluid content-wrapper">
   <div class="row">
-    <div *ngFor="let item of items; let itemIndex = index" class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12">
-        <app-item [item]="item"></app-item>
+    <div *ngFor="let item of items; let itemIndex = index" [ngClass]="itemLayouts[itemLayout]" >
+        <app-item [item]="item" [itemLayout]="itemLayout"></app-item>
     </div>
   </div>
 </div>

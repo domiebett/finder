@@ -1,4 +1,5 @@
 <div *ngIf="modalType !== 'none'" class="modal-container">
+  <app-add-button (click)="closeModal()" class="close-button"></app-add-button>
   <div #modal class="custom-modal">
 
     <app-auth *ngIf="modalType==='login' || modalType==='register'" [authType]="modalType" (close)="closeModal()"></app-auth>

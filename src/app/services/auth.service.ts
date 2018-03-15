@@ -10,7 +10,7 @@ import 'rxjs/add/operator/map';
 export class AuthService {
 
   authBaseUrl: string;
-  currentUser;
+  currentUser = null;
   currentUserChange: Subject<string> = new Subject<string>();
 
   constructor(private http: Http) {

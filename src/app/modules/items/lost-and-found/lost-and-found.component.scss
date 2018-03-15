@@ -42,9 +42,8 @@
     background-color: white;
 }
 
-@media screen and (max-width: 700px) {
-    .add-item-button-holder {
-        display: none;
-        visibility: hidden;
-    }
+.add-button {
+    position: absolute;
+    bottom: 60px;
+    right: 40px;
 }
