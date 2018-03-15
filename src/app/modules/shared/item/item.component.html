@@ -1,0 +1,30 @@
+<div class="item-card">
+  <div class="wrapper">
+    <div class="header">
+      <div class="date">
+        {{ item.dateUpdated | date:'mediumDate' }}
+      </div>
+      <ul class="menu-content">
+        <li>
+          <a class="fa fa-heart-o">
+            <span>18</span>
+          </a>
+        </li>
+        <li>
+          <a class="fa fa-comment-o">
+            <span>3</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+    <div class="data">
+      <div class="content">
+        <span class="author">{{ reporter.first_name}} {{ reporter.last_name }}</span>
+        <h1 class="card-title">
+          <a>{{ item.name }}</a>
+        </h1>
+        <button class="btn btn-success claim-button text">{{ item.owner ? 'Report Found' : 'Claim Item' }}</button>
+      </div>
+    </div>
+  </div>
+</div>

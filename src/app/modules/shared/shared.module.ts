@@ -15,6 +15,7 @@ import { AddItemModalComponent } from './add-item-modal/add-item-modal.component
 import { DropDownComponent } from './drop-down/drop-down.component';
 import { LoaderComponent } from './loader/loader.component';
 import { AlertComponent } from './alert/alert.component';
+import { ItemComponent } from './item/item.component';
 
 @NgModule({
   imports: [
@@ -33,7 +34,8 @@ import { AlertComponent } from './alert/alert.component';
     DropDownComponent,
     LoaderComponent,
     ErrorComponent,
-    AlertComponent
+    AlertComponent,
+    ItemComponent
   ],
   exports: [
     HeaderComponent,
@@ -42,7 +44,8 @@ import { AlertComponent } from './alert/alert.component';
     DropDownComponent,
     LoaderComponent,
     ErrorComponent,
-    AlertComponent
+    AlertComponent,
+    ItemComponent
   ],
   providers: [
     ModalComponent,
