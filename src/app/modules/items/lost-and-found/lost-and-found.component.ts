@@ -14,7 +14,7 @@ export class LostAndFoundComponent implements OnInit {
 
   @ViewChild(ItemsTableComponent) itemsTableComponent: ItemsTableComponent;
   sectionToShow = 'found';
-  currentUser;
+  currentUser = null;
   subscription;
 
   constructor(

@@ -15,5 +15,6 @@
   </app-items-table>
 </div>
 
-<app-add-button class="add-button" (click)="openAddItemModal()"></app-add-button>
+<app-add-button class="add-button" [disabled]="!(currentUser)"
+(click)="openAddItemModal()" [toolTipText]="!(currentUser) ? 'Login to add item' : 'Add lost item'"></app-add-button>
 <app-footerbar (paginationPage)="fetchPaginatedPage($event)"></app-footerbar>

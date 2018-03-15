@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 
 @Component({
   selector: 'app-add-button',
@@ -8,10 +8,13 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 export class AddButtonComponent implements OnInit {
 
   @Output() click = new EventEmitter();
+  @Input() disabled = false;
+  @Input() toolTipText;
 
   constructor() { }
 
   ngOnInit() {
+    console.log(this.disabled);
   }
 
   /**
