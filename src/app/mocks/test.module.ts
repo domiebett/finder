@@ -1,4 +1,7 @@
+<<<<<<< HEAD
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+=======
+>>>>>>> feat(test): adds tests for items module
 import { Http, ConnectionBackend, RequestOptions, HttpModule } from '@angular/http';
 import { ModalService } from './../services/modal.service';
 import { ItemsService } from './../services/items.service';
