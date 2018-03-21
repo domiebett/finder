@@ -1,4 +1,3 @@
-// import { CommonModule } from '@angular/common';
 import { Http, ConnectionBackend, RequestOptions, HttpModule } from '@angular/http';
 import { ModalService } from './../services/modal.service';
 import { ItemsService } from './../services/items.service';
@@ -25,11 +24,24 @@ import { AuthService } from '../services/auth.service';
 import { FormsModule } from '@angular/forms';
 import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from '../app.component';
+import { Location } from '@angular/common';
+
+const appRoutes = [
+    { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
+
+    { path: 'dashboard', component: DashboardComponent },
+
+    { path: 'items/:section', component: LostAndFoundComponent},
+
+    { path: 'error/:errorCode', component: ErrorComponent },
+
+    { path: '**', redirectTo: 'error/404', pathMatch: 'full'}
+];
 
 export const testingModule = {
     imports: [
         HttpModule,
-        RouterTestingModule,
+        RouterTestingModule.withRoutes(appRoutes),
         FormsModule,
     ],
     declarations: [
