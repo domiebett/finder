@@ -1,49 +1,80 @@
 import { Injectable } from '@angular/core';
 import {
   Http,
-  XHRBackend,
   RequestOptions,
-  Request,
   RequestOptionsArgs,
   Response,
-  Headers,
+  Headers
 } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
-import 'rxjs/add/operator/map';
-import 'rxjs/add/operator/catch';
 
 @Injectable()
-export class HttpService extends Http {
+export class HttpService {
   private token: string;
+  private options: RequestOptionsArgs;
 
-  static useFactory(backend: XHRBackend, options: RequestOptions) {
-    return new HttpService(backend, options);
+  constructor(private http: Http) {
+    this.setAuthorizationHeader();
   }
 
-  constructor (backend: XHRBackend, options: RequestOptions) {
-    super(backend, options);
+  /**
+   * Adds an authorization header to Request options
+   */
+  setAuthorizationHeader() {
+    this.options = { headers: new Headers() };
     this.token = localStorage.getItem('authToken');
-    options.headers.set('Authorization', `Bearer ${this.token}`);
+    this.options.headers.set('Authorization', `Bearer ${this.token}`);
   }
 
-  request(
-    url: string|Request,
-    options?: RequestOptionsArgs
-  ): Observable<Response> {
-    if (typeof url === 'string') {
-      if (!options) {
-        options = {headers: new Headers()};
-      }
-      options.headers.set('Authorization', `Bearer ${this.token}`);
-    } else {
-      url.headers.set('Authorization', `Bearer ${this.token}`);
-    }
-
-    return super.request(url, options).catch(this.catchAuthenticationError(this));
+  /**
+   * Sends post requests
+   *
+   * @param {String} url - http url for api
+   * @param {Object} requestParams - parameters to be sent with request
+   *
+   * @return {Observable} - response from the server
+   */
+  post(url: string, requestParams?: object) {
+    this.setAuthorizationHeader();
+    return this.http.post(url, requestParams, this.options);
   }
 
-  private catchAuthenticationError (self: HttpService) {
-    return (response: Response) => Observable.throw(response);
+  /**
+   * Sends get requests
+   *
+   * @param {String} url - http url for api
+   * @param {Object} requestParams - parameters to be sent with request
+   *
+   * @return {Observable} - response from the server
+   */
+  get(url: string) {
+    this.setAuthorizationHeader();
+    return this.http.get(url, this.options);
+  }
+
+  /**
+   * Sends put requests
+   *
+   * @param {String} url - http url for api
+   * @param {Object} requestParams - parameters to be sent with request
+   *
+   * @return {Observable} - response from the server
+   */
+  put(url: string, requestParams?: object) {
+    this.setAuthorizationHeader();
+    return this.http.put(url, requestParams, this.options);
+  }
+
+  /**
+   * Sends delete requests
+   *
+   * @param {String} url - http url for api
+   * @param {Object} requestParams - parameters to be sent with request
+   *
+   * @return {Observable} - response from the server
+   */
+  delete(url: string, requestParams?: object) {
+    this.setAuthorizationHeader();
+    return this.http.delete(url, this.options);
   }
 }
-

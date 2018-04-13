@@ -31,7 +31,7 @@ export class AddItemModalComponent implements OnInit {
     this.categoryService.getCategories()
       .toPromise()
       .then((response) => {
-        this.categories = response;
+        this.categories = response.categories;
       });
   }
 

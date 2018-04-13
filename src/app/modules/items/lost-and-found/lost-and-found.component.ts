@@ -5,10 +5,24 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ItemsTableComponent } from '../items-table/items-table.component';
 
+import { trigger, state, style, animate, transition } from '@angular/animations';
+import { foundSwitcherAnimation, lostSwitcherAnimation } from './../../../animations/switcher.animation';
+import { foundFadeInOutAnimation, lostFadeInOutAnimation } from './../../../animations/lost-and-found.animation';
+import { fadeInAnimation } from './../../../animations/fade-in.animation';
+
 @Component({
   selector: 'app-lost-and-found',
   templateUrl: './lost-and-found.component.html',
-  styleUrls: ['./lost-and-found.component.scss']
+  styleUrls: ['./lost-and-found.component.scss'],
+  animations: [
+    fadeInAnimation,
+    foundFadeInOutAnimation,
+    lostFadeInOutAnimation,
+    foundSwitcherAnimation,
+    lostSwitcherAnimation,
+  ],
+  // tslint:disable-next-line:use-host-property-decorator
+  host: { '[@fadeInAnimation]': '' }
 })
 export class LostAndFoundComponent implements OnInit {
 
@@ -39,6 +53,10 @@ export class LostAndFoundComponent implements OnInit {
 
   }
 
+  /**
+   * Changes the sections
+   * @param {String} section - the section to be displayed
+   */
   switchSection(section) {
     this.sectionToShow = section;
     this.checkSectionValidity(this.sectionToShow);
