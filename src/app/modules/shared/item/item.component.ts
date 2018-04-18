@@ -14,6 +14,8 @@ export class ItemComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    this.reporter = this.item.owner ? this.item.owner : this.item.finder;
+    if (this.item) {
+      this.reporter = this.item.owner ? this.item.owner : this.item.finder;
+    }
   }
 }

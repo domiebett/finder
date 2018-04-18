@@ -1,9 +1,10 @@
-<div *ngIf="modalType !== 'none'" class="modal-container">
-  <app-add-button (click)="closeModal()" class="close-button"></app-add-button>
-  <div #modal class="custom-modal">
+<div  [@fadeInOut]="modalType" class="modal-container"></div>
 
-    <app-auth *ngIf="modalType==='login' || modalType==='register'" [authType]="modalType" (close)="closeModal()"></app-auth>
+<div [@slideInOut]="modalType" #modal class="custom-modal">
 
-    <app-add-item-modal *ngIf="modalType==='addItem'" (close)="closeModal()"></app-add-item-modal>
-  </div>
+  <app-auth *ngIf="modalType==='login' || modalType==='register'" [authType]="modalType" (close)="closeModal()"></app-auth>
+
+  <app-add-item-modal *ngIf="modalType==='addItem'" (close)="closeModal()"></app-add-item-modal>
 </div>
+
+<app-add-button *ngIf="modalType !== 'none'"  (click)="closeModal()" class="close-button"></app-add-button>

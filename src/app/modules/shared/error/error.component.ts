@@ -42,7 +42,7 @@ export class ErrorComponent implements OnInit {
         'An unexpected error occured. We apologise for the inconvinience';
     }
 
-    if (errorCode === 404 || errorCode === 500) {
+    if (errorCode === '404' || errorCode === '500') {
       this.backgroundImageClass = `error-${errorCode}-background`;
     }
   }

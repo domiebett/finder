@@ -20,13 +20,11 @@ export class ItemsTableComponent implements OnInit, OnDestroy {
     'compact': [ 'col-xl-2', 'col-lg-3', 'col-md-4', 'col-sm-6', 'col-12' ],
     'classic': [ 'col-xl-3', 'col-lg-4', 'col-md-6', 'col-sm-6', 'col-12' ]
   };
-  paramData = { reporter: null };
+  params = { reporter: null };
 
   constructor(
     private itemsService: ItemsService,
-    private modalService: ModalService,
     private authService: AuthService,
-    private alertService: AlertService
   ) {
     this.currentUser = this.authService.currentUser;
     this.subscription = authService.currentUserChange
@@ -37,9 +35,9 @@ export class ItemsTableComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
     if (this.itemsType === 'found') {
-      this.paramData.reporter = 'finder';
+      this.params.reporter = 'finder';
     } else if (this.itemsType === 'lost') {
-      this.paramData.reporter = 'owner';
+      this.params.reporter = 'owner';
     }
 
     this.getItems();
@@ -58,39 +56,14 @@ export class ItemsTableComponent implements OnInit, OnDestroy {
   getItems(pageNumber?: number) {
     this.loading = true;
     if (pageNumber) {
-      this.paramData['page'] = pageNumber;
+      this.params['page'] = pageNumber;
     }
-    this.paramData['limit'] = 40;
-    this.itemsService.getItems(this.paramData)
+    this.params['limit'] = 40;
+    this.itemsService.getItems(this.params)
       .toPromise()
       .then((response) => {
-        this.items = this.formatItem(response.items);
+        this.items = response.items;
         this.loading = false;
       });
-  }
-
-  /**
-   * Change the content to be displayed for each item
-   *
-   * @param {number} itemIndex - index of item clicked
-   * @param {string} toDisplay - content to be displayed
-   */
-  changeDisplayType(itemIndex, toDisplay) {
-    const item = this.items[itemIndex];
-    item['toDisplay'] = toDisplay;
-  }
-
-  /**
-   * Formats items to desirable format
-   *
-   * @param {array} items - all items to be formated
-   *
-   * @return {array} formated Items
-   */
-  formatItem(items) {
-    for (const item of items) {
-      item['toDisplay'] = 'description';
-    }
-    return items;
   }
 }

@@ -1,15 +1,14 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ErrorComponent } from './error.component';
+import { testingModule } from './../../../mocks/test.module';
 
 describe('ErrorComponent', () => {
   let component: ErrorComponent;
   let fixture: ComponentFixture<ErrorComponent>;
 
   beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      declarations: [ ErrorComponent ]
-    })
+    TestBed.configureTestingModule(testingModule)
     .compileComponents();
   }));
 
