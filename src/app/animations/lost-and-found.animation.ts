@@ -3,12 +3,12 @@ import { trigger, state, style, animate, transition } from '@angular/animations'
 export const foundFadeInOutAnimation = trigger('foundFadeInOut', [
     state('found', style({
         opacity: 1,
-        transform: 'scale(1)',
+        transform: 'scaleX(1)',
         display: 'block',
     })),
     state('lost', style({
         opacity: 0,
-        transform: 'scale(0)',
+        transform: 'scaleX(0)',
         display: 'none'
     })),
     transition('found => lost', animate('100ms ease-in')),
@@ -18,12 +18,12 @@ export const foundFadeInOutAnimation = trigger('foundFadeInOut', [
 export const lostFadeInOutAnimation = trigger('lostFadeInOut', [
     state('lost', style({
         opacity: 1,
-        transform: 'scale(1)',
+        transform: 'scaleX(1)',
         display: 'block'
     })),
     state('found', style({
         opacity: 0,
-        transform: 'scale(0)',
+        transform: 'scaleX(0)',
         display: 'none'
     })),
     transition('lost => found', animate('100ms ease-out')),

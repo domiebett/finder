@@ -6,61 +6,39 @@
     left: 0;
     background-color: rgba(255, 255, 255, 0.7);;
     z-index: 190;
-    animation: slideInFromRight 0.5s;
-
-    .custom-modal {
-        position: fixed;
-        min-height: 100vh;
-        height: 100vh;
-        background-color: rgb(231, 231, 231);
-        box-shadow: 0 0 10px black;
-        top: 0;
-        right: 0;
-        padding: 20px;
-        z-index: 200;
-        overflow: scroll;
-        animation: fadein 1s;
-    }
-
-    .custom-modal-long {
-        top: 5vh;
-    }
-
-    .custom-modal-short {
-        top: 15vh;
-    }
-
-    .close-button {
-        position: absolute;
-        transform: rotate(45deg);
-    }
 }
 
-@keyframes fadein {
-
-    0% {
-        opacity: 0;
-    }
-    40% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
-    }
+.custom-modal {
+    position: fixed;
+    min-height: 100vh;
+    height: 100vh;
+    background-color: rgb(231, 231, 231);
+    box-shadow: 0 0 10px black;
+    top: 0;
+    right: 0;
+    padding: 20px;
+    z-index: 200;
+    overflow: scroll;
 }
 
-@keyframes slideInFromRight {
-    from {
-        left: 100vw;
-    }
-    to {
-        right: 0vw;
-    }
+.custom-modal-long {
+    top: 5vh;
+}
+
+.custom-modal-short {
+    top: 15vh;
+}
+
+.close-button {
+    position: absolute;
+    transform: rotate(45deg);
+    z-index: 210;
 }
 
 @media only screen and (max-width: 700px) {
     .custom-modal {
         width: 100vw;
+        z-index: 200;
     }
 
     .close-button {

@@ -1,3 +1,4 @@
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { Http, ConnectionBackend, RequestOptions, HttpModule } from '@angular/http';
 import { ModalService } from './../services/modal.service';
 import { ItemsService } from './../services/items.service';
@@ -43,6 +44,7 @@ export const testingModule = {
         HttpModule,
         RouterTestingModule.withRoutes(appRoutes),
         FormsModule,
+        BrowserAnimationsModule,
     ],
     declarations: [
         AppComponent,

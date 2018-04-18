@@ -1,4 +1,4 @@
-<div class="auth-modal-holder">
+<div *ngIf="authType === 'login' || authType === 'register'"  class="auth-modal-holder">
     <div class="custom-modal-heading">
         <h4 class="title">{{ authType | titlecase}}</h4>
     </div>
