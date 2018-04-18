@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { async, ComponentFixture, TestBed, inject } from '@angular/core/testing';
 
 import { AddButtonComponent } from './add-button.component';
 import { testingModule } from './../../../mocks/test.module';
@@ -9,7 +9,7 @@ describe('AddButtonComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule(testingModule)
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {
@@ -20,5 +20,12 @@ describe('AddButtonComponent', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+
+  it('should emit on click', () => {
+    spyOn(component.click, 'emit');
+    const nativeElement = fixture.nativeElement;
+    component.buttonClick();
+    expect(component.click.emit).toHaveBeenCalled();
   });
 });
