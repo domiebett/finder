@@ -9,8 +9,8 @@ export const foundSwitcherAnimation = trigger('foundSwitcher', [
         border: '1px solid  transparent',
         borderBottom: '1px solid #ddd'
     })),
-    transition('found => lost', animate('1000ms ease-out')),
-    transition('lost => found', animate('1000ms ease-in'))
+    transition('found => lost', animate('100ms ease-out')),
+    transition('lost => found', animate('100ms ease-in'))
 ]);
 
 export const lostSwitcherAnimation = trigger('lostSwitcher', [
@@ -22,6 +22,6 @@ export const lostSwitcherAnimation = trigger('lostSwitcher', [
         border: '1px solid transparent',
         borderBottom: '1px solid #ddd'
     })),
-    transition('found => lost', animate('1000ms ease-in')),
-    transition('lost => found', animate('1000ms ease-out'))
+    transition('found => lost', animate('100ms ease-in')),
+    transition('lost => found', animate('100ms ease-out'))
 ]);

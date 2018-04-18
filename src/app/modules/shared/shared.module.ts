@@ -16,7 +16,7 @@ import { DropDownComponent } from './drop-down/drop-down.component';
 import { LoaderComponent } from './loader/loader.component';
 import { AlertComponent } from './alert/alert.component';
 import { ItemComponent } from './item/item.component';
-import { AddButtonComponent } from './add-button/add-button.component';
+import { RoundButtonComponent } from './round-button/round-button.component';
 
 @NgModule({
   imports: [
@@ -37,7 +37,7 @@ import { AddButtonComponent } from './add-button/add-button.component';
     ErrorComponent,
     AlertComponent,
     ItemComponent,
-    AddButtonComponent
+    RoundButtonComponent
   ],
   exports: [
     HeaderComponent,
@@ -48,7 +48,7 @@ import { AddButtonComponent } from './add-button/add-button.component';
     ErrorComponent,
     AlertComponent,
     ItemComponent,
-    AddButtonComponent
+    RoundButtonComponent
   ],
   providers: [
     ModalComponent,

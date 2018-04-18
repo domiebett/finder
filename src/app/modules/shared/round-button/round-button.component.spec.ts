@@ -1,11 +1,11 @@
 import { async, ComponentFixture, TestBed, inject } from '@angular/core/testing';
 
-import { AddButtonComponent } from './add-button.component';
+import { RoundButtonComponent } from './round-button.component';
 import { testingModule } from './../../../mocks/test.module';
 
 describe('AddButtonComponent', () => {
-  let component: AddButtonComponent;
-  let fixture: ComponentFixture<AddButtonComponent>;
+  let component: RoundButtonComponent;
+  let fixture: ComponentFixture<RoundButtonComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule(testingModule)
@@ -13,7 +13,7 @@ describe('AddButtonComponent', () => {
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(AddButtonComponent);
+    fixture = TestBed.createComponent(RoundButtonComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

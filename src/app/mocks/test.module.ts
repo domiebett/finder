@@ -13,7 +13,7 @@ import { HeaderComponent } from './../modules/shared/header/header.component';
 import { AuthComponent } from './../modules/shared/auth/auth.component';
 import { AlertComponent } from './../modules/shared/alert/alert.component';
 import { AddItemModalComponent } from './../modules/shared/add-item-modal/add-item-modal.component';
-import { AddButtonComponent } from './../modules/shared/add-button/add-button.component';
+import { RoundButtonComponent } from './../modules/shared/round-button/round-button.component';
 import { ItemsTableComponent } from './../modules/items/items-table/items-table.component';
 import { DashboardComponent } from './../modules/items/dashboard/dashboard.component';
 import { LostAndFoundComponent } from '../modules/items/lost-and-found/lost-and-found.component';
@@ -51,7 +51,7 @@ export const testingModule = {
         DashboardComponent,
         ItemsTableComponent,
         LostAndFoundComponent,
-        AddButtonComponent,
+        RoundButtonComponent,
         AddItemModalComponent,
         AlertComponent,
         AuthComponent,

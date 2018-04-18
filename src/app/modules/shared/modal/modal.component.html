@@ -7,4 +7,4 @@
   <app-add-item-modal *ngIf="modalType==='addItem'" (close)="closeModal()"></app-add-item-modal>
 </div>
 
-<app-add-button *ngIf="modalType !== 'none'"  (click)="closeModal()" class="close-button"></app-add-button>
+<app-round-button *ngIf="modalType !== 'none'" [tilted]='closeButtonTilted'  (click)="closeModal()" class="close-button"></app-round-button>
