@@ -2,20 +2,18 @@ import { trigger, state, style, animate, transition } from '@angular/animations'
 
 export const modalSlideInOut = trigger('slideInOut', [
     state('none', style({
-        opacity: 0,
         display: 'none',
         left: '100vw'
     })),
     state('*', style({
-        opacity: 1,
         display: 'block',
         right: '0'
     })),
-    transition('none => *', animate('500ms ease-in')),
-    transition('* => none', animate('500ms ease-out')),
-    transition('none => login', animate('500ms ease-in')),
-    transition('none => register', animate('500ms ease-in')),
-    transition('none => addItem', animate('500ms ease-in')),
+    transition('none => *', animate('500ms ease-in-out')),
+    transition('* => none', animate('500ms ease-in-out')),
+    transition('none => login', animate('500ms ease-in-out')),
+    transition('none => register', animate('500ms ease-in-out')),
+    transition('none => addItem', animate('500ms ease-in-out')),
 ]);
 
 export const modalFadeInOut = trigger('fadeInOut', [

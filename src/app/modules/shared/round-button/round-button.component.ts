@@ -1,15 +1,16 @@
 import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 
 @Component({
-  selector: 'app-add-button',
-  templateUrl: './add-button.component.html',
-  styleUrls: ['./add-button.component.scss']
+  selector: 'app-round-button',
+  templateUrl: './round-button.component.html',
+  styleUrls: ['./round-button.component.scss']
 })
-export class AddButtonComponent implements OnInit {
+export class RoundButtonComponent implements OnInit {
 
   @Output() click = new EventEmitter();
   @Input() disabled = false;
   @Input() toolTipText;
+  @Input() tilted = false;
 
   constructor() { }
 

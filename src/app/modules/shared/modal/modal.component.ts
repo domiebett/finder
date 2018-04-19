@@ -17,6 +17,7 @@ export class ModalComponent implements OnInit {
   modalType = 'none';
   modalWidth = 'slim';
   modalLength = 'short';
+  closeButtonTilted = true;
 
   constructor(private modalService: ModalService) { }
 
